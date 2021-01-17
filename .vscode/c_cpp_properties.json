@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "includePath": [
+        "${workspaceFolder}/external/src",
+        "${workspaceFolder}/external/include",
+        "${workspaceFolder}/build",
+        "/usr/lib/**",
+        "/usr/lib/*",
+        "/usr/local/**",
+        "/usr/local/*",
+        "/usr/lib/llvm-10/lib/clang/10.0.0/include"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/clang",
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "intelliSenseMode": "clang-x64",
+      "configurationProvider": "ms-vscode.cmake-tools"
+    }
+  ],
+  "version": 4
+}
