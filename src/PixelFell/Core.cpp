@@ -3,6 +3,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <Math/linmath.h>
+
 using namespace std;
 
 static void error_callback(int error, const char* description)
