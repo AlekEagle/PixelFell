@@ -24,14 +24,9 @@ namespace Pixelfell
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+    glfwWindowHint(GLFW_RESIZABLE, 0);
 
-    glfwWindowHint(GLFW_RED_BITS, mode->redBits);
-    glfwWindowHint(GLFW_GREEN_BITS, mode->greenBits);
-    glfwWindowHint(GLFW_BLUE_BITS, mode->blueBits);
-    glfwWindowHint(GLFW_REFRESH_RATE, mode->refreshRate);
-
-    window = glfwCreateWindow(mode->width, mode->height, windowName, glfwGetPrimaryMonitor(), NULL);
+    window = glfwCreateWindow(1920, 1080, windowName, NULL, NULL);
     glfwMakeContextCurrent(window);
     gladLoadGL();
     glfwSwapInterval(1);
@@ -46,20 +41,16 @@ namespace Pixelfell
   {
     while(!glfwWindowShouldClose(window)) {
       int width, height;
-        glfwGetFramebufferSize(window, &width, &height);
-        const float ratio = width / (float) height;
+      glfwGetFramebufferSize(window, &width, &height);
       glViewport(0, 0, width, height);
-        glClear(GL_COLOR_BUFFER_BIT);
+      glClear(GL_COLOR_BUFFER_BIT);
 
-        mat4x4 m, p, mvp;
-        mat4x4_identity(m);
-        mat4x4_ortho(p, -ratio, ratio, -1.f, 1.f, 1.f, -1.f);
-        mat4x4_mul(mvp, p, m);
+      //Game Loop logic Start
+      
+      //Game Loop logic Stop
 
-        
-    
-        glfwSwapBuffers(window);
-        glfwPollEvents();
+      glfwSwapBuffers(window);
+      glfwPollEvents();
     };
   }
 }
